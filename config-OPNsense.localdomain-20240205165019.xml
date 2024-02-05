@@ -1,0 +1,1145 @@
+<?xml version="1.0"?>
+<opnsense>
+  <theme>opnsense</theme>
+  <sysctl>
+    <item>
+      <descr>Increase UFS read-ahead speeds to match the state of hard drives and NCQ.</descr>
+      <tunable>vfs.read_max</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Set the ephemeral port range to be lower.</descr>
+      <tunable>net.inet.ip.portrange.first</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Drop packets to closed TCP ports without returning a RST</descr>
+      <tunable>net.inet.tcp.blackhole</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Do not send ICMP port unreachable messages for closed UDP ports</descr>
+      <tunable>net.inet.udp.blackhole</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Randomize the ID field in IP packets</descr>
+      <tunable>net.inet.ip.random_id</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>
+        Source routing is another way for an attacker to try to reach non-routable addresses behind your box.
+        It can also be used to probe for information about your internal networks. These functions come enabled
+        as part of the standard FreeBSD core system.
+      </descr>
+      <tunable>net.inet.ip.sourceroute</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>
+        Source routing is another way for an attacker to try to reach non-routable addresses behind your box.
+        It can also be used to probe for information about your internal networks. These functions come enabled
+        as part of the standard FreeBSD core system.
+      </descr>
+      <tunable>net.inet.ip.accept_sourceroute</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>
+        This option turns off the logging of redirect packets because there is no limit and this could fill
+        up your logs consuming your whole hard drive.
+      </descr>
+      <tunable>net.inet.icmp.log_redirect</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Drop SYN-FIN packets (breaks RFC1379, but nobody uses it anyway)</descr>
+      <tunable>net.inet.tcp.drop_synfin</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Enable sending IPv6 redirects</descr>
+      <tunable>net.inet6.ip6.redirect</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Enable privacy settings for IPv6 (RFC 4941)</descr>
+      <tunable>net.inet6.ip6.use_tempaddr</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Prefer privacy addresses and use them over the normal addresses</descr>
+      <tunable>net.inet6.ip6.prefer_tempaddr</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Generate SYN cookies for outbound SYN-ACK packets</descr>
+      <tunable>net.inet.tcp.syncookies</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Maximum incoming/outgoing TCP datagram size (receive)</descr>
+      <tunable>net.inet.tcp.recvspace</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Maximum incoming/outgoing TCP datagram size (send)</descr>
+      <tunable>net.inet.tcp.sendspace</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Do not delay ACK to try and piggyback it onto a data packet</descr>
+      <tunable>net.inet.tcp.delayed_ack</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Maximum outgoing UDP datagram size</descr>
+      <tunable>net.inet.udp.maxdgram</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Handling of non-IP packets which are not passed to pfil (see if_bridge(4))</descr>
+      <tunable>net.link.bridge.pfil_onlyip</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Set to 1 to additionally filter on the physical interface for locally destined packets</descr>
+      <tunable>net.link.bridge.pfil_local_phys</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Set to 0 to disable filtering on the incoming and outgoing member interfaces.</descr>
+      <tunable>net.link.bridge.pfil_member</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Set to 1 to enable filtering on the bridge interface</descr>
+      <tunable>net.link.bridge.pfil_bridge</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Allow unprivileged access to tap(4) device nodes</descr>
+      <tunable>net.link.tap.user_open</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Randomize PID's (see src/sys/kern/kern_fork.c: sysctl_kern_randompid())</descr>
+      <tunable>kern.randompid</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Disable CTRL+ALT+Delete reboot from keyboard.</descr>
+      <tunable>hw.syscons.kbd_reboot</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Enable TCP extended debugging</descr>
+      <tunable>net.inet.tcp.log_debug</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Set ICMP Limits</descr>
+      <tunable>net.inet.icmp.icmplim</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>TCP Offload Engine</descr>
+      <tunable>net.inet.tcp.tso</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>UDP Checksums</descr>
+      <tunable>net.inet.udp.checksum</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Maximum socket buffer size</descr>
+      <tunable>kern.ipc.maxsockbuf</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Page Table Isolation (Meltdown mitigation, requires reboot.)</descr>
+      <tunable>vm.pmap.pti</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Disable Indirect Branch Restricted Speculation (Spectre V2 mitigation)</descr>
+      <tunable>hw.ibrs_disable</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Hide processes running as other groups</descr>
+      <tunable>security.bsd.see_other_gids</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Hide processes running as other users</descr>
+      <tunable>security.bsd.see_other_uids</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>Enable/disable sending of ICMP redirects in response to IP packets for which a better,
+        and for the sender directly reachable, route and next hop is known.
+      </descr>
+      <tunable>net.inet.ip.redirect</tunable>
+      <value>default</value>
+    </item>
+    <item>
+      <descr>
+        Redirect attacks are the purposeful mass-issuing of ICMP type 5 packets. In a normal network, redirects
+        to the end stations should not be required. This option enables the NIC to drop all inbound ICMP redirect
+        packets without returning a response.
+      </descr>
+      <tunable>net.inet.icmp.drop_redirect</tunable>
+      <value>1</value>
+    </item>
+    <item>
+      <descr>Maximum outgoing UDP datagram size</descr>
+      <tunable>net.local.dgram.maxdgram</tunable>
+      <value>default</value>
+    </item>
+  </sysctl>
+  <system>
+    <optimization>normal</optimization>
+    <hostname>OPNsense</hostname>
+    <domain>localdomain</domain>
+    <dnsallowoverride>1</dnsallowoverride>
+    <group>
+      <name>admins</name>
+      <description>System Administrators</description>
+      <scope>system</scope>
+      <gid>1999</gid>
+      <member>0</member>
+      <priv>page-all</priv>
+    </group>
+    <user>
+      <name>root</name>
+      <descr>System Administrator</descr>
+      <scope>system</scope>
+      <groupname>admins</groupname>
+      <password>$2y$10$YRVoF4SgskIsrXOvOQjGieB9XqHPRra9R7d80B3BZdbY/j21TwBfS</password>
+      <uid>0</uid>
+    </user>
+    <nextuid>2000</nextuid>
+    <nextgid>2000</nextgid>
+    <timezone>Etc/UTC</timezone>
+    <timeservers>0.opnsense.pool.ntp.org 1.opnsense.pool.ntp.org 2.opnsense.pool.ntp.org 3.opnsense.pool.ntp.org</timeservers>
+    <webgui>
+      <protocol>https</protocol>
+      <ssl-certref>65c110f56dc4a</ssl-certref>
+    </webgui>
+    <usevirtualterminal>1</usevirtualterminal>
+    <disableconsolemenu/>
+    <disablevlanhwfilter>1</disablevlanhwfilter>
+    <disablechecksumoffloading>1</disablechecksumoffloading>
+    <disablesegmentationoffloading>1</disablesegmentationoffloading>
+    <disablelargereceiveoffloading>1</disablelargereceiveoffloading>
+    <ipv6allow>1</ipv6allow>
+    <powerd_ac_mode>hadp</powerd_ac_mode>
+    <powerd_battery_mode>hadp</powerd_battery_mode>
+    <powerd_normal_mode>hadp</powerd_normal_mode>
+    <bogons>
+      <interval>monthly</interval>
+    </bogons>
+    <pf_share_forward>1</pf_share_forward>
+    <lb_use_sticky>1</lb_use_sticky>
+    <ssh>
+      <group>admins</group>
+    </ssh>
+    <rrdbackup>-1</rrdbackup>
+    <netflowbackup>-1</netflowbackup>
+    <firmware version="1.0.1">
+      <mirror/>
+      <flavour/>
+      <plugins/>
+      <subscription/>
+    </firmware>
+    <enablenatreflectionhelper>yes</enablenatreflectionhelper>
+    <maximumstates/>
+    <maximumfrags/>
+    <aliasesresolveinterval/>
+    <maximumtableentries/>
+    <pfdebug>urgent</pfdebug>
+  </system>
+  <interfaces>
+    <wan>
+      <enable>1</enable>
+      <if>le2</if>
+      <mtu/>
+      <ipaddr>dhcp</ipaddr>
+      <ipaddrv6>dhcp6</ipaddrv6>
+      <subnet/>
+      <gateway/>
+      <blockpriv>1</blockpriv>
+      <blockbogons>1</blockbogons>
+      <dhcphostname/>
+      <media/>
+      <mediaopt/>
+      <dhcp6-ia-pd-len>0</dhcp6-ia-pd-len>
+    </wan>
+    <lan>
+      <enable>1</enable>
+      <if>le0</if>
+      <ipaddr>192.168.56.2</ipaddr>
+      <subnet>24</subnet>
+      <ipaddrv6/>
+      <subnetv6/>
+      <media/>
+      <mediaopt/>
+      <gateway/>
+      <gatewayv6/>
+    </lan>
+    <lo0>
+      <internal_dynamic>1</internal_dynamic>
+      <descr>Loopback</descr>
+      <enable>1</enable>
+      <if>lo0</if>
+      <ipaddr>127.0.0.1</ipaddr>
+      <ipaddrv6>::1</ipaddrv6>
+      <subnet>8</subnet>
+      <subnetv6>128</subnetv6>
+      <type>none</type>
+      <virtual>1</virtual>
+    </lo0>
+    <opt1>
+      <if>le1</if>
+      <enable>1</enable>
+      <ipaddr>192.168.2.2</ipaddr>
+      <subnet>24</subnet>
+      <gateway/>
+      <ipaddrv6/>
+      <subnetv6/>
+      <gatewayv6/>
+    </opt1>
+  </interfaces>
+  <dhcpd>
+    <lan>
+      <enable>1</enable>
+      <range>
+        <from>192.168.56.10</from>
+        <to>192.168.56.100</to>
+      </range>
+    </lan>
+    <opt1>
+      <enable>1</enable>
+      <range>
+        <from>192.168.2.10</from>
+        <to>192.168.2.100</to>
+      </range>
+    </opt1>
+  </dhcpd>
+  <snmpd>
+    <syslocation/>
+    <syscontact/>
+    <rocommunity>public</rocommunity>
+  </snmpd>
+  <nat>
+    <outbound>
+      <mode>automatic</mode>
+    </outbound>
+    <rule>
+      <protocol>tcp</protocol>
+      <interface>opt1</interface>
+      <category/>
+      <ipprotocol>inet</ipprotocol>
+      <descr>Allow ssh through firewall</descr>
+      <tag/>
+      <tagged/>
+      <poolopts/>
+      <associated-rule-id>nat_65c111a039fb05.03561007</associated-rule-id>
+      <target>192.168.56.6</target>
+      <local-port>27017</local-port>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <network>opt1ip</network>
+        <port>27016</port>
+      </destination>
+      <natreflection>purenat</natreflection>
+      <updated>
+        <username>root@192.168.56.1</username>
+        <time>1707151776.2379</time>
+        <description>/firewall_nat_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@192.168.56.1</username>
+        <time>1707151776.2379</time>
+        <description>/firewall_nat_edit.php made changes</description>
+      </created>
+    </rule>
+  </nat>
+  <filter>
+    <rule uuid="fd988818-ab28-439f-ac20-2828ec192dc4">
+      <type>pass</type>
+      <ipprotocol>inet</ipprotocol>
+      <descr>Default allow LAN to any rule</descr>
+      <interface>lan</interface>
+      <source>
+        <network>lan</network>
+      </source>
+      <destination>
+        <any/>
+      </destination>
+      <disabled>1</disabled>
+    </rule>
+    <rule uuid="367eea63-32e2-4030-a3a5-f92cc7af5f3c">
+      <type>pass</type>
+      <ipprotocol>inet6</ipprotocol>
+      <descr>Default allow LAN IPv6 to any rule</descr>
+      <interface>lan</interface>
+      <source>
+        <network>lan</network>
+      </source>
+      <destination>
+        <any/>
+      </destination>
+      <disabled>1</disabled>
+    </rule>
+    <rule uuid="68d6c542-fa1f-4999-bb0a-2fc9f1015f2b">
+      <type>pass</type>
+      <interface>lan</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>Allow all ICMP Requests</descr>
+      <direction>in</direction>
+      <quick>1</quick>
+      <protocol>icmp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <network>opt1ip</network>
+      </destination>
+      <updated>
+        <username>root@192.168.56.1</username>
+        <time>1707151787.7246</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@192.168.56.1</username>
+        <time>1707151787.7246</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </created>
+    </rule>
+    <rule uuid="de50279a-ddf9-4666-bc8b-057d1a81947e">
+      <type>pass</type>
+      <interface>lan</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>Allow ssh through firewall</descr>
+      <direction>in</direction>
+      <quick>1</quick>
+      <protocol>tcp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <address>192.168.56.6</address>
+      </destination>
+      <updated>
+        <username>root@192.168.56.1</username>
+        <time>1707151793.862</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@192.168.56.1</username>
+        <time>1707151793.8621</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </created>
+    </rule>
+    <rule uuid="e529a947-a03e-4b5a-b317-78f731c95177">
+      <type>pass</type>
+      <interface>lan</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>Allow TCP on port 8081 and 8082</descr>
+      <direction>in</direction>
+      <quick>1</quick>
+      <protocol>tcp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <any>1</any>
+        <port>8081-8082</port>
+      </destination>
+      <updated>
+        <username>root@192.168.56.1</username>
+        <time>1707151799.6805</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@192.168.56.1</username>
+        <time>1707151799.6813</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </created>
+    </rule>
+    <rule uuid="690989a0-d5a2-4b5c-82a8-8c3ec46d4548">
+      <type>pass</type>
+      <interface>lan</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>Allow UDP on port 8083</descr>
+      <direction>in</direction>
+      <quick>1</quick>
+      <protocol>udp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <any>1</any>
+        <port>8083</port>
+      </destination>
+      <updated>
+        <username>root@192.168.56.1</username>
+        <time>1707151804.6758</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@192.168.56.1</username>
+        <time>1707151804.6758</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </created>
+    </rule>
+    <rule uuid="c8208135-167c-4146-8c1a-de994eb7aa96">
+      <type>reject</type>
+      <interface>lan</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>Reject All Requests</descr>
+      <direction>in</direction>
+      <quick>1</quick>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <any>1</any>
+      </destination>
+      <updated>
+        <username>root@192.168.56.1</username>
+        <time>1707151808.774</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@192.168.56.1</username>
+        <time>1707151808.7741</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </created>
+    </rule>
+    <rule uuid="41b613f0-66bb-4f1a-a287-5a870c074229">
+      <associated-rule-id>nat_65c111a039fb05.03561007</associated-rule-id>
+      <source>
+        <any>1</any>
+      </source>
+      <interface>opt1</interface>
+      <statetype>keep state</statetype>
+      <protocol>tcp</protocol>
+      <ipprotocol>inet</ipprotocol>
+      <destination>
+        <address>192.168.56.6</address>
+        <port>27017</port>
+      </destination>
+      <descr>Allow ssh through firewall</descr>
+      <category/>
+      <created>
+        <username>root@192.168.56.1</username>
+        <time>1707151776.2376</time>
+        <description>/firewall_nat_edit.php made changes</description>
+      </created>
+    </rule>
+  </filter>
+  <rrd>
+    <enable/>
+  </rrd>
+  <load_balancer>
+    <monitor_type>
+      <name>ICMP</name>
+      <type>icmp</type>
+      <descr>ICMP</descr>
+      <options/>
+    </monitor_type>
+    <monitor_type>
+      <name>TCP</name>
+      <type>tcp</type>
+      <descr>Generic TCP</descr>
+      <options/>
+    </monitor_type>
+    <monitor_type>
+      <name>HTTP</name>
+      <type>http</type>
+      <descr>Generic HTTP</descr>
+      <options>
+        <path>/</path>
+        <host/>
+        <code>200</code>
+      </options>
+    </monitor_type>
+    <monitor_type>
+      <name>HTTPS</name>
+      <type>https</type>
+      <descr>Generic HTTPS</descr>
+      <options>
+        <path>/</path>
+        <host/>
+        <code>200</code>
+      </options>
+    </monitor_type>
+    <monitor_type>
+      <name>SMTP</name>
+      <type>send</type>
+      <descr>Generic SMTP</descr>
+      <options>
+        <send/>
+        <expect>220 *</expect>
+      </options>
+    </monitor_type>
+  </load_balancer>
+  <ntpd>
+    <prefer>0.opnsense.pool.ntp.org</prefer>
+  </ntpd>
+  <widgets>
+    <sequence>system_information-container:00000000-col3:show,services_status-container:00000001-col4:show,gateways-container:00000002-col4:show,interface_list-container:00000003-col4:show</sequence>
+    <column_count>2</column_count>
+  </widgets>
+  <revision>
+    <username>root@192.168.56.1</username>
+    <time>1707151814.3217</time>
+    <description>/system_advanced_firewall.php made changes</description>
+  </revision>
+  <OPNsense>
+    <IPsec version="1.0.1">
+      <general>
+        <enabled/>
+      </general>
+      <keyPairs/>
+      <preSharedKeys/>
+    </IPsec>
+    <Swanctl version="1.0.0">
+      <Connections/>
+      <locals/>
+      <remotes/>
+      <children/>
+      <Pools/>
+      <VTIs/>
+      <SPDs/>
+    </Swanctl>
+    <OpenVPNExport version="0.0.1">
+      <servers/>
+    </OpenVPNExport>
+    <OpenVPN version="1.0.0">
+      <Overwrites/>
+      <Instances/>
+      <StaticKeys/>
+    </OpenVPN>
+    <captiveportal version="1.0.1">
+      <zones/>
+      <templates/>
+    </captiveportal>
+    <cron version="1.0.4">
+      <jobs/>
+    </cron>
+    <Firewall>
+      <Lvtemplate version="0.0.1">
+        <templates/>
+      </Lvtemplate>
+      <Alias version="1.0.1">
+        <geoip>
+          <url/>
+        </geoip>
+        <aliases/>
+      </Alias>
+      <Category version="1.0.0">
+        <categories/>
+      </Category>
+    </Firewall>
+    <Netflow version="1.0.1">
+      <capture>
+        <interfaces/>
+        <egress_only/>
+        <version>v9</version>
+        <targets/>
+      </capture>
+      <collect>
+        <enable>0</enable>
+      </collect>
+      <activeTimeout>1800</activeTimeout>
+      <inactiveTimeout>15</inactiveTimeout>
+    </Netflow>
+    <IDS version="1.0.7">
+      <rules/>
+      <policies/>
+      <userDefinedRules/>
+      <files/>
+      <fileTags/>
+      <general>
+        <enabled>0</enabled>
+        <ips>0</ips>
+        <promisc>0</promisc>
+        <interfaces>wan</interfaces>
+        <homenet>192.168.0.0/16,10.0.0.0/8,172.16.0.0/12</homenet>
+        <defaultPacketSize/>
+        <UpdateCron/>
+        <AlertLogrotate>W0D23</AlertLogrotate>
+        <AlertSaveLogs>4</AlertSaveLogs>
+        <MPMAlgo>ac</MPMAlgo>
+        <detect>
+          <Profile>medium</Profile>
+          <toclient_groups/>
+          <toserver_groups/>
+        </detect>
+        <syslog>0</syslog>
+        <syslog_eve>0</syslog_eve>
+        <LogPayload>0</LogPayload>
+        <verbosity/>
+      </general>
+    </IDS>
+    <Interfaces>
+      <loopbacks version="1.0.0"/>
+      <vxlans version="1.0.1"/>
+    </Interfaces>
+    <monit version="1.0.11">
+      <general>
+        <enabled>0</enabled>
+        <interval>120</interval>
+        <startdelay>120</startdelay>
+        <mailserver>127.0.0.1</mailserver>
+        <port>25</port>
+        <username/>
+        <password/>
+        <ssl>0</ssl>
+        <sslversion>auto</sslversion>
+        <sslverify>1</sslverify>
+        <logfile>syslog facility log_daemon</logfile>
+        <statefile/>
+        <eventqueuePath/>
+        <eventqueueSlots/>
+        <httpdEnabled>0</httpdEnabled>
+        <httpdUsername>root</httpdUsername>
+        <httpdPassword>KYk7WV3cQiWq87oUPAHhQXw</httpdPassword>
+        <httpdPort>2812</httpdPort>
+        <httpdAllow/>
+        <mmonitUrl/>
+        <mmonitTimeout>5</mmonitTimeout>
+        <mmonitRegisterCredentials>1</mmonitRegisterCredentials>
+      </general>
+      <alert uuid="86878932-3cd9-4eaa-9ee7-2cb55e72d2dd">
+        <enabled>0</enabled>
+        <recipient>root@localhost.local</recipient>
+        <noton>0</noton>
+        <events/>
+        <format/>
+        <reminder>10</reminder>
+        <description/>
+      </alert>
+      <service uuid="233413ad-13e2-49da-ab19-bf506e7bbde5">
+        <enabled>1</enabled>
+        <name>$HOST</name>
+        <description/>
+        <type>system</type>
+        <pidfile/>
+        <match/>
+        <path/>
+        <timeout>300</timeout>
+        <starttimeout>30</starttimeout>
+        <address/>
+        <interface/>
+        <start/>
+        <stop/>
+        <tests>de2880d4-2e31-4232-abd8-f7c0a1568ffc,da380b1e-be23-483a-a107-a246869d681f,3932134e-f33d-4c9a-9ea1-97fc1c253618,6c32bb36-fcd3-4f3c-85d5-435474da5017</tests>
+        <depends/>
+        <polltime/>
+      </service>
+      <service uuid="b867f6b2-8ebb-4caf-97e8-67787cfcb2f4">
+        <enabled>1</enabled>
+        <name>RootFs</name>
+        <description/>
+        <type>filesystem</type>
+        <pidfile/>
+        <match/>
+        <path>/</path>
+        <timeout>300</timeout>
+        <starttimeout>30</starttimeout>
+        <address/>
+        <interface/>
+        <start/>
+        <stop/>
+        <tests>4cb7bc45-6b84-4866-be85-183ac48b332d</tests>
+        <depends/>
+        <polltime/>
+      </service>
+      <service uuid="a0556a84-606f-4aea-9f2c-6c988fb0f31a">
+        <enabled>0</enabled>
+        <name>carp_status_change</name>
+        <description/>
+        <type>custom</type>
+        <pidfile/>
+        <match/>
+        <path>/usr/local/opnsense/scripts/OPNsense/Monit/carp_status</path>
+        <timeout>300</timeout>
+        <starttimeout>30</starttimeout>
+        <address/>
+        <interface/>
+        <start/>
+        <stop/>
+        <tests>267473cb-bd4b-4112-a450-39002f19bb0f</tests>
+        <depends/>
+        <polltime/>
+      </service>
+      <service uuid="d38f87ab-5c69-4e2c-8dba-8253a2958408">
+        <enabled>0</enabled>
+        <name>gateway_alert</name>
+        <description/>
+        <type>custom</type>
+        <pidfile/>
+        <match/>
+        <path>/usr/local/opnsense/scripts/OPNsense/Monit/gateway_alert</path>
+        <timeout>300</timeout>
+        <starttimeout>30</starttimeout>
+        <address/>
+        <interface/>
+        <start/>
+        <stop/>
+        <tests>e8fa0220-7db3-495e-939f-9be53ebc4462</tests>
+        <depends/>
+        <polltime/>
+      </service>
+      <test uuid="d3a06294-d799-4939-8d0b-05ec519a033a">
+        <name>Ping</name>
+        <type>NetworkPing</type>
+        <condition>failed ping</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="f38a3f15-e151-46b9-a198-cdc9dfd90736">
+        <name>NetworkLink</name>
+        <type>NetworkInterface</type>
+        <condition>failed link</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="80bf109f-4af8-4118-98f5-b647db0791fe">
+        <name>NetworkSaturation</name>
+        <type>NetworkInterface</type>
+        <condition>saturation is greater than 75%</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="de2880d4-2e31-4232-abd8-f7c0a1568ffc">
+        <name>MemoryUsage</name>
+        <type>SystemResource</type>
+        <condition>memory usage is greater than 75%</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="da380b1e-be23-483a-a107-a246869d681f">
+        <name>CPUUsage</name>
+        <type>SystemResource</type>
+        <condition>cpu usage is greater than 75%</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="3932134e-f33d-4c9a-9ea1-97fc1c253618">
+        <name>LoadAvg1</name>
+        <type>SystemResource</type>
+        <condition>loadavg (1min) is greater than 6</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="6c32bb36-fcd3-4f3c-85d5-435474da5017">
+        <name>LoadAvg5</name>
+        <type>SystemResource</type>
+        <condition>loadavg (5min) is greater than 4.5</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="bea9b75f-77c9-4227-9d9d-9694a05205b7">
+        <name>LoadAvg15</name>
+        <type>SystemResource</type>
+        <condition>loadavg (15min) is greater than 3</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="4cb7bc45-6b84-4866-be85-183ac48b332d">
+        <name>SpaceUsage</name>
+        <type>SpaceUsage</type>
+        <condition>space usage is greater than 75%</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="267473cb-bd4b-4112-a450-39002f19bb0f">
+        <name>ChangedStatus</name>
+        <type>ProgramStatus</type>
+        <condition>changed status</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+      <test uuid="e8fa0220-7db3-495e-939f-9be53ebc4462">
+        <name>NonZeroStatus</name>
+        <type>ProgramStatus</type>
+        <condition>status != 0</condition>
+        <action>alert</action>
+        <path/>
+      </test>
+    </monit>
+    <proxy version="1.0.6">
+      <general>
+        <enabled>0</enabled>
+        <error_pages>opnsense</error_pages>
+        <icpPort/>
+        <logging>
+          <enable>
+            <accessLog>1</accessLog>
+            <storeLog>1</storeLog>
+          </enable>
+          <ignoreLogACL/>
+          <target/>
+        </logging>
+        <alternateDNSservers/>
+        <dnsV4First>0</dnsV4First>
+        <forwardedForHandling>on</forwardedForHandling>
+        <uriWhitespaceHandling>strip</uriWhitespaceHandling>
+        <enablePinger>1</enablePinger>
+        <useViaHeader>1</useViaHeader>
+        <suppressVersion>0</suppressVersion>
+        <connecttimeout/>
+        <VisibleEmail>admin@localhost.local</VisibleEmail>
+        <VisibleHostname/>
+        <cache>
+          <local>
+            <enabled>0</enabled>
+            <directory>/var/squid/cache</directory>
+            <cache_mem>256</cache_mem>
+            <maximum_object_size/>
+            <maximum_object_size_in_memory/>
+            <memory_cache_mode>always</memory_cache_mode>
+            <size>100</size>
+            <l1>16</l1>
+            <l2>256</l2>
+            <cache_linux_packages>0</cache_linux_packages>
+            <cache_windows_updates>0</cache_windows_updates>
+          </local>
+        </cache>
+        <traffic>
+          <enabled>0</enabled>
+          <maxDownloadSize>2048</maxDownloadSize>
+          <maxUploadSize>1024</maxUploadSize>
+          <OverallBandwidthTrotteling>1024</OverallBandwidthTrotteling>
+          <perHostTrotteling>256</perHostTrotteling>
+        </traffic>
+        <parentproxy>
+          <enabled>0</enabled>
+          <host/>
+          <enableauth>0</enableauth>
+          <user>username</user>
+          <password>password</password>
+          <port/>
+          <localdomains/>
+          <localips/>
+        </parentproxy>
+      </general>
+      <forward>
+        <interfaces>lan</interfaces>
+        <port>3128</port>
+        <sslbumpport>3129</sslbumpport>
+        <sslbump>0</sslbump>
+        <sslurlonly>0</sslurlonly>
+        <sslcertificate/>
+        <sslnobumpsites/>
+        <ssl_crtd_storage_max_size>4</ssl_crtd_storage_max_size>
+        <sslcrtd_children>5</sslcrtd_children>
+        <snmp_enable>0</snmp_enable>
+        <snmp_port>3401</snmp_port>
+        <snmp_password>public</snmp_password>
+        <ftpInterfaces/>
+        <ftpPort>2121</ftpPort>
+        <ftpTransparentMode>0</ftpTransparentMode>
+        <addACLforInterfaceSubnets>1</addACLforInterfaceSubnets>
+        <transparentMode>0</transparentMode>
+        <acl>
+          <allowedSubnets/>
+          <unrestricted/>
+          <bannedHosts/>
+          <whiteList/>
+          <blackList/>
+          <browser/>
+          <mimeType/>
+          <googleapps/>
+          <youtube/>
+          <safePorts>80:http,21:ftp,443:https,70:gopher,210:wais,1025-65535:unregistered ports,280:http-mgmt,488:gss-http,591:filemaker,777:multiling http</safePorts>
+          <sslPorts>443:https</sslPorts>
+          <remoteACLs>
+            <blacklists/>
+            <UpdateCron/>
+          </remoteACLs>
+        </acl>
+        <icap>
+          <enable>0</enable>
+          <RequestURL>icap://[::1]:1344/avscan</RequestURL>
+          <ResponseURL>icap://[::1]:1344/avscan</ResponseURL>
+          <SendClientIP>1</SendClientIP>
+          <SendUsername>0</SendUsername>
+          <EncodeUsername>0</EncodeUsername>
+          <UsernameHeader>X-Username</UsernameHeader>
+          <EnablePreview>1</EnablePreview>
+          <PreviewSize>1024</PreviewSize>
+          <OptionsTTL>60</OptionsTTL>
+          <exclude/>
+        </icap>
+        <authentication>
+          <method/>
+          <authEnforceGroup/>
+          <realm>OPNsense proxy authentication</realm>
+          <credentialsttl>2</credentialsttl>
+          <children>5</children>
+        </authentication>
+      </forward>
+      <pac/>
+      <error_pages>
+        <template/>
+      </error_pages>
+    </proxy>
+    <Syslog version="1.0.1">
+      <general>
+        <enabled>1</enabled>
+      </general>
+      <destinations/>
+    </Syslog>
+    <TrafficShaper version="1.0.3">
+      <pipes/>
+      <queues/>
+      <rules/>
+    </TrafficShaper>
+    <unboundplus version="1.0.6">
+      <general>
+        <enabled>1</enabled>
+        <port>53</port>
+        <stats>0</stats>
+        <active_interface/>
+        <dnssec>0</dnssec>
+        <dns64>0</dns64>
+        <dns64prefix>64:ff9b::/96</dns64prefix>
+        <noarecords>0</noarecords>
+        <regdhcp>0</regdhcp>
+        <regdhcpdomain/>
+        <regdhcpstatic>0</regdhcpstatic>
+        <noreglladdr6>0</noreglladdr6>
+        <noregrecords>0</noregrecords>
+        <txtsupport>0</txtsupport>
+        <cacheflush>0</cacheflush>
+        <local_zone_type>transparent</local_zone_type>
+        <outgoing_interface/>
+        <enable_wpad>0</enable_wpad>
+      </general>
+      <advanced>
+        <hideidentity>0</hideidentity>
+        <hideversion>0</hideversion>
+        <prefetch>0</prefetch>
+        <prefetchkey>0</prefetchkey>
+        <dnssecstripped>0</dnssecstripped>
+        <serveexpired>0</serveexpired>
+        <serveexpiredreplyttl/>
+        <serveexpiredttl/>
+        <serveexpiredttlreset>0</serveexpiredttlreset>
+        <serveexpiredclienttimeout/>
+        <qnameminstrict>0</qnameminstrict>
+        <extendedstatistics>0</extendedstatistics>
+        <logqueries>0</logqueries>
+        <logreplies>0</logreplies>
+        <logtagqueryreply>0</logtagqueryreply>
+        <logservfail>0</logservfail>
+        <loglocalactions>0</loglocalactions>
+        <logverbosity>1</logverbosity>
+        <valloglevel>0</valloglevel>
+        <privatedomain/>
+        <privateaddress>0.0.0.0/8,10.0.0.0/8,100.64.0.0/10,169.254.0.0/16,172.16.0.0/12,192.0.2.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,233.252.0.0/24,::1/128,2001:db8::/32,fc00::/8,fd00::/8,fe80::/10</privateaddress>
+        <insecuredomain/>
+        <msgcachesize/>
+        <rrsetcachesize/>
+        <outgoingnumtcp/>
+        <incomingnumtcp/>
+        <numqueriesperthread/>
+        <outgoingrange/>
+        <jostletimeout/>
+        <cachemaxttl/>
+        <cachemaxnegativettl/>
+        <cacheminttl/>
+        <infrahostttl/>
+        <infrakeepprobing>0</infrakeepprobing>
+        <infracachenumhosts/>
+        <unwantedreplythreshold/>
+      </advanced>
+      <acls>
+        <default_action>allow</default_action>
+      </acls>
+      <dnsbl>
+        <enabled>0</enabled>
+        <safesearch>0</safesearch>
+        <type/>
+        <lists/>
+        <whitelists/>
+        <blocklists/>
+        <wildcards/>
+        <address/>
+        <nxdomain>0</nxdomain>
+      </dnsbl>
+      <forwarding>
+        <enabled>0</enabled>
+      </forwarding>
+      <dots/>
+      <hosts/>
+      <aliases/>
+      <domains/>
+    </unboundplus>
+  </OPNsense>
+  <openvpn/>
+  <ifgroups version="1.0.0"/>
+  <laggs version="1.0.0">
+    <lagg/>
+  </laggs>
+  <virtualip version="1.0.0">
+    <vip/>
+  </virtualip>
+  <vlans version="1.0.0">
+    <vlan/>
+  </vlans>
+  <staticroutes version="1.0.0">
+    <route/>
+  </staticroutes>
+  <bridges>
+    <bridged/>
+  </bridges>
+  <gifs>
+    <gif/>
+  </gifs>
+  <gres>
+    <gre/>
+  </gres>
+  <ppps>
+    <ppp/>
+  </ppps>
+  <wireless>
+    <clone/>
+  </wireless>
+  <ca/>
+  <dhcpdv6/>
+  <cert>
+    <refid>65c10fd89f6ad</refid>
+    <descr>Web GUI TLS certificate</descr>
+    <crt>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUhORENDQlJ5Z0F3SUJBZ0lVWXpqZVhlVDBHUktjV1dXVjUzSTRSckNqWVdZd0RRWUpLb1pJaHZjTkFRRUwKQlFBd2dZa3hIVEFiQmdOVkJBTU1GRTlRVG5ObGJuTmxMbXh2WTJGc1pHOXRZV2x1TVFzd0NRWURWUVFHRXdKTwpUREVWTUJNR0ExVUVDQXdNV25WcFpDMUliMnhzWVc1a01SVXdFd1lEVlFRSERBeE5hV1JrWld4b1lYSnVhWE14CkxUQXJCZ05WQkFvTUpFOVFUbk5sYm5ObElITmxiR1l0YzJsbmJtVmtJSGRsWWlCalpYSjBhV1pwWTJGMFpUQWUKRncweU5EQXlNRFV4TmpReU1ESmFGdzB5TlRBek1EZ3hOalF5TURKYU1JR0pNUjB3R3dZRFZRUUREQlJQVUU1egpaVzV6WlM1c2IyTmhiR1J2YldGcGJqRUxNQWtHQTFVRUJoTUNUa3d4RlRBVEJnTlZCQWdNREZwMWFXUXRTRzlzCmJHRnVaREVWTUJNR0ExVUVCd3dNVFdsa1pHVnNhR0Z5Ym1sek1TMHdLd1lEVlFRS0RDUlBVRTV6Wlc1elpTQnoKWld4bUxYTnBaMjVsWkNCM1pXSWdZMlZ5ZEdsbWFXTmhkR1V3Z2dJaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQwpEd0F3Z2dJS0FvSUNBUUN5REl1dXNnQlJjL3ZFY2NaRUpLaUs5cGhGUkNYRjdqMmV6aEhOK2JSR1N6bVVRc0txCkFLR0NMeDB2bGdmN1hwKysySjlrc05QYm1BRTlzMStLczAvYU43dmc0VXc2RjdEQzFtZXdNcUdtUWk3eitmWDYKQXZGU0d1OFdoQVp2TGFGc1czSEhveU8yTE5EWUtqTllHMStXblIwTnN6aVE3a3dQOVE3VVRsM1RyZlZvaitCQgpzZlV5YmxDOTZHN1ZKcjcvdmxKc2RBc0QzcGpDOUZXTWpSU05vV25HWFJKdHROTG9tUWtMSVJhNzBlekt6cjFLCitsSVJvNHBydjRhU1NiT211c3paamdWVklhSnkxZ2ZESkxCUUdQRHZiY1ZBckdGMFRZU2pXQUhSR2h2dkVRa2gKWHBzM1dyOHEyeXRhUDdrM3BIV21abHBTUDBHS1JIMDU3OWdiMjh1Sm1LbjZjQ3l6d2JlRFlmVnZxTUVvSnFzRQpsdS9IRmNVb3BFOWpXMU45WXlhT1VFMmtVUkZqRXdHUmN4YTRWUzF2Z2gxNko4TzlsaUNQUDZlY2x3WHBJZTdGCmlibUcxclBtMmhKa0c2RnYvSjhiWkFuYi8zYzVRdDlyNm9BWGg5R0NqdE5BYWhGOFZ4dmJZc3dvMGxZQVhzUUIKZUZoS2FPVkFHbkhmalBpOWFNY0FLOGt6cVJQNHRjbmFwWnZlQ3kyejlEOHNNME14eVR1bk5kNDd1bG0xcVlySQpCQlRVVG4zOTZGYVA4dTlaZm5pUTM4c01pTEFpQWluM0c2TitHZ0h2YjFMNW12MVZjQW9ndDZjdDAvV3k0UXpzCkRoVjYwM3ZWb1Z1U1VoS2M5U3MrVnhkUjh5WXY3MXI0NFUya3Q1QW9mbWg2SmhLd0x4Z3dEUXVEdVFJREFRQUIKbzRJQmtEQ0NBWXd3Q1FZRFZSMFRCQUl3QURBUkJnbGdoa2dCaHZoQ0FRRUVCQU1DQmtBd05BWUpZSVpJQVliNApRZ0VOQkNjV0pVOVFUbk5sYm5ObElFZGxibVZ5WVhSbFpDQlRaWEoyWlhJZ1EyVnlkR2xtYVdOaGRHVXdIUVlEClZSME9CQllFRkZtNmNkTTF5U1YybUhXdkJaUzZXT3BiVXhJcE1JSEpCZ05WSFNNRWdjRXdnYjZBRkZtNmNkTTEKeVNWMm1IV3ZCWlM2V09wYlV4SXBvWUdQcElHTU1JR0pNUjB3R3dZRFZRUUREQlJQVUU1elpXNXpaUzVzYjJOaApiR1J2YldGcGJqRUxNQWtHQTFVRUJoTUNUa3d4RlRBVEJnTlZCQWdNREZwMWFXUXRTRzlzYkdGdVpERVZNQk1HCkExVUVCd3dNVFdsa1pHVnNhR0Z5Ym1sek1TMHdLd1lEVlFRS0RDUlBVRTV6Wlc1elpTQnpaV3htTFhOcFoyNWwKWkNCM1pXSWdZMlZ5ZEdsbWFXTmhkR1dDRkdNNDNsM2s5QmtTbkZsbGxlZHlPRWF3bzJGbU1CMEdBMVVkSlFRVwpNQlFHQ0NzR0FRVUZCd01CQmdnckJnRUZCUWdDQWpBTEJnTlZIUThFQkFNQ0JhQXdId1lEVlIwUkJCZ3dGb0lVClQxQk9jMlZ1YzJVdWJHOWpZV3hrYjIxaGFXNHdEUVlKS29aSWh2Y05BUUVMQlFBRGdnSUJBSmVJSk1mNlZqZ0YKSERObVlPaGU3MzVaUXpJOUxXQWhxYWM4VlQvSmQ3cXp5d1UwRU9oazE5N0N1cEpOZ1A1eEJ5dHRYdVZOY1pteQpFMEtuUmRrMjhPNXA2aG9kTzZIRXZqc0JscDZlOXIwbkNCRUc0dDU0MG44Tm1ZYXpKLzdza1o2Q1R4ZTJTS3ljCnJnRHN4Z1BqKzNwUS9jWkRhT09rbGZBcjdac3Q5SkRmUmV5TEVPdXFsRG9jSU1MN2V6RnFkeU9RRjlVQUpPUjQKL1YrdVQxUk04ZXRPcFZpOHBkNEdPVDVuM0tRRFVIcUN5UE9TM25FbVhDelI1RlVMYkdsZjhuc0xpNzlyb3lHQworeGZpTFplMGxEenZlU0ZPOU9oSFRVNFBiVTZmUkVkL3AwVGtscXN0OE5XR0xaK1Fydm1vYkdjaVRNajM4VDBVClc5aE9IamhBQ0xiVERlc2xjcnNIWXBIa3NNMncwaG01c2owQVduVHd3Zlk2UE1qU3BYcTA2emlScjVLS0RCbjQKMUtjU3Jjb2g1NmQ2M1M1WmxOY2FDc3prK0FQK1I2NGUybjhXQzg3ZjJIbDAxcmEwcU9HUUJVSGVYSWhIem55NgpGQi9lL0o5RE92S2V0WkJVQ3labXM0T2ZjUjdUd05aWnR6RHdGUVd2WjFwRjdtYkVDWFphcGxtTVhEL2FQT1hqCllxb0RSSU9LRDR0bHBhRXcrRWIxMFM1RGtCRTlHZHlqbE9ReExDS29pcldKS0s1S1FmMG4yaGVsRE1mdUxGNWEKbXUrZDRVZVRFakNjWXBwRUxuaHhLTnVFY2VkN3RweXhnUlZiQTBGeE96ZDlGRU1xUHlZNnNqeit2VjNabmg3WApzeFNmZjZUYVY1NjhoUmp6RndDamF1bGlkSEVsSzJhTwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==</crt>
+    <prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUpRZ0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQ1N3d2dna29BZ0VBQW9JQ0FRQ3lESXV1c2dCUmMvdkUKY2NaRUpLaUs5cGhGUkNYRjdqMmV6aEhOK2JSR1N6bVVRc0txQUtHQ0x4MHZsZ2Y3WHArKzJKOWtzTlBibUFFOQpzMStLczAvYU43dmc0VXc2RjdEQzFtZXdNcUdtUWk3eitmWDZBdkZTR3U4V2hBWnZMYUZzVzNISG95TzJMTkRZCktqTllHMStXblIwTnN6aVE3a3dQOVE3VVRsM1RyZlZvaitCQnNmVXlibEM5Nkc3VkpyNy92bEpzZEFzRDNwakMKOUZXTWpSU05vV25HWFJKdHROTG9tUWtMSVJhNzBlekt6cjFLK2xJUm80cHJ2NGFTU2JPbXVzelpqZ1ZWSWFKeQoxZ2ZESkxCUUdQRHZiY1ZBckdGMFRZU2pXQUhSR2h2dkVRa2hYcHMzV3I4cTJ5dGFQN2szcEhXbVpscFNQMEdLClJIMDU3OWdiMjh1Sm1LbjZjQ3l6d2JlRFlmVnZxTUVvSnFzRWx1L0hGY1VvcEU5alcxTjlZeWFPVUUya1VSRmoKRXdHUmN4YTRWUzF2Z2gxNko4TzlsaUNQUDZlY2x3WHBJZTdGaWJtRzFyUG0yaEprRzZGdi9KOGJaQW5iLzNjNQpRdDlyNm9BWGg5R0NqdE5BYWhGOFZ4dmJZc3dvMGxZQVhzUUJlRmhLYU9WQUduSGZqUGk5YU1jQUs4a3pxUlA0CnRjbmFwWnZlQ3kyejlEOHNNME14eVR1bk5kNDd1bG0xcVlySUJCVFVUbjM5NkZhUDh1OVpmbmlRMzhzTWlMQWkKQWluM0c2TitHZ0h2YjFMNW12MVZjQW9ndDZjdDAvV3k0UXpzRGhWNjAzdlZvVnVTVWhLYzlTcytWeGRSOHlZdgo3MXI0NFUya3Q1QW9mbWg2SmhLd0x4Z3dEUXVEdVFJREFRQUJBb0lDQUNLNXk2eUF6d3NUNGZESWQvRG1iWERjCjg0bmU1cmNaNWk3STVqUVVGWkw0TFB5N29KZmprNXgrYitUT0VEUjRtaE53MEhXay8weis4bzhFSXdnOFBNREUKeWdIc0x4L05hdzQxSHZnQWlBS1RPZkVmdVZmUHB4MXFYMk0yME1KeVZkOTZYbENmZ3VHUEVCUjQ5cGFpa0J3aAovSDZsaTh6SWpWRTNiSEwvN2REUlJ1SGozY3N5V0M1RDBiK1lTN1dLM3dtbUp4RTcrTUlDY2l6ajFxT1pDSDh2CkVpQThHdElHeUhQUkZUQjBmYWlZSXVUVE9ad2NBbEdxWWQ3dDllTW1PTUcyQVNvVlJ2ajVuR05sVnhJNlg2RGYKbkc0MkxKaVdobE5Xb3gzd2xqb2dLMzZQQmdiYUdzL0xCU25vb1NYeTg3N2tkb1hEeEszeDVHaUJQeU5Eb2hSSgpsZVhlbDF1L2pNMXd3TGJwYTFRQzJRREg5d2N4YzZKOERTbW1OL3hMbnJzaGc3eHl2Y0M5RGxjWElHam1DbFNlCkpoOTBwWFJMalBuK095VjV3WXVCTlh3M2lCODNnWWx5dGJyR2xXNVJGb2E0L1E5eGhKZnhGMVJPaVpSNVJJT2wKWHZ6YkZkT3padlUzVDlrQ0lkVUY2K29adnB4aGJMVFBvNnBkMCt0cFpCdk1kTzlDYlNjQmtLSmdiOXloQmdPMApqV1o1clZoNTZ6UTM2ODRzZ1FZZFBNNCt0anQvTG5sNElWMzRvYXd0VXJCZC9GWGNSZU1YRis0b1JrcmN5aTd4CitsSjlOM29IQWI5N0ZiN05Pdk9haDNDRnp1SmIxSUhnOWlNKzJ3SThQTHN4emVrdHlVaU5wdU94UUduVnZhOFcKSEpsbmJ0V3Q3QUgybjRxVHVYTFpBb0lCQVFEYTJTbk1NV2JWUlNsRVpDMXZHbzBkdW9kVDZ5YlBUc3o1UjhtMQpZcUtsbENRNU50RHZPSlVPMWM2VFA0T212bUErc2NZaG9VOHJqWkdrb1NOVkhsUFdITUFoRytvWSs2MDV0WXNiCmVHaDV3UGFwMjFwd05yV3JFcDFMUkpSK0FTRTFIRVFYM3VUUTQ2SzNMYUxMMW52YkR6SEVITUcwSW01L05Idk4KdTR6cTUveHkvbnQ5RzNEU29lZDNvQXpKR21DU3A0WjBBNGRZMVZ6WFM2OEtieU9oTUliQUZCT0Z6eWRucUxzQgpxbkZRdjJWdzNhZWdKQzREYU50ZTRvZGlhMTJRUzB6SWJMRzF4ME45UWhCV25haGRxME55UlRzQWRNNUMvWjZXCkdqTlFDNG5lb1c3TWlWUFJubTNCeUFuaklsU2dYQVY4aTRiUDlPdTNpNmV1NnVFdkFvSUJBUURRUmsyYWRNT3gKemo3ZlFwbFNHcXFBTUx3ZlRRcXNYN244eGEyeVNXN05ldlVFb0czUld5c3BhcEF2QTdTcDg3L2RPa3d3d256cgptbEpWUzVnelRGVlE3dnJXaEhPenMyQlJWL21GS0JXeTJBYWNsOE5pWVNrRkRsY0lia2RUQUJYang0RlJOVEY1CmV6bitycm14RHorZCtPV2tzWFlBZzNHRUxaOU1PYzJLS1ZNVEFueElodUMwa0t2clBlNWVqa3NtRU9tTE5rWDUKZXFXbjgrN2Uwb0JtVkx3ZXhPUU5SaHBkRUFXZGFweUN1Y3NhSVBGVDdPYURJbzhzKzlQTmQ0Qmp0dkpMRFJJTQp5cGJXclczRlY5clZINDNQZk9jeDhQNHJlSHVadXdwWURKMGNoazVkbWltN3pHTmNvMVc3OXprYU50U0pTZXZwCksxbE52WFVkaEIrWEFvSUJBUUNmOElYempVY3lKbEY2Z2h3U1RyMUROTWNpTllFdmtNK01mMEtUSlhyb3Q5T2gKWE1abGpseWhjdkI5L0xVaWI0KzNRZ1VqSHRqVlk2bEZQOTZxbm5kMnk1dytsa0FIOGljdlBkWmtSU05WbUFpdApLbnAxK0FYYytNV3I5SHJ4ZTdIaE5yOHRFdUQzS09ZS0tYZ0lzTC9qNEw3bUxINEVRQVd4UVpJWlVUQXpuVWVLCll5R3MxUmtuVnR2ck9UVWU1QUFnTGY2OVdyYlgzVmIwb1lOVGhOWHRQNkc3VHZEVm9nZVNZbVlKV1o5bSsvb08KK204L1FqRytuQ3QydE9kc3JqcTY4YzB6elB3emRXV0ZiWHF6VXBWeG4zQ3pXcFU4U0NGV0pEUjZUcnVoakUwKwpQNHpTUHFyYlQ0VzNVWktvUkxiRVczeEhBVkdOT2RuclVrMUNNTFpSQW9JQkFFTUd6UVN2SFNlRXEyRW9TclZNCmxhQnBqckU0RnY1QVZGZVB1b1dNOGxhNGdrKzUzWDJwckd0SXV4d1dRamNMbGF4NWpYbUhyYklZMlBSUVBxd0wKbmMxTkMzYXI2NXhpVnRYMnpQdFlXaHRUUUZWMjFjODhXM29nRWt4SlNUVGg2eW1CMUJFeFlEbXJPWS9INVVTaApGcVVkSzdKajFnajJSRHI0ZjdLRlM2dHgveVU0QUkxS3N0Z0pVdnFDMU1xalduWG1yWEk2eGl3eWwwdEV5cFAxCkJKTnFJNXgzV3JrVzNYY2pwOXJ3SzJ3NnBLMUUrc1U2a1RpVWo2VTNhZ05PdVFmZUlYMmJ1RHBibkUxOFJMNWsKdHEwdDJYSnp6T2VhbWdHZFpaR2t5d0JwRnNyT1Fqd0hWL1R6SXVyMk9hb2pOc0pEOFFRNXdPMHFJVFJPaTNregpRd01DZ2dFQVhuVGsvVTMvZDFHWVArN2dyNGFQMExaZ1BDRFowOXp4QXB5azIrV2U5a2J6RkJVL284R2E5VTZkClRJSThHdmZ5SGZzQndrYjRwWGw0YXdMVVFrMXlhTE1qTHVUNklXR0FiZ0ZQbW56QzNmUFY4R2pyS1NkbjNaVHoKVlRhcGZLQ1RHK3dnZjBWWVZaVXQzS3lMcnBoMGtiWlZVWkkyeXVyWGhQNlkzOWNRRGUwWHlvQVJJeU53SDdsRApvdlJHNEZoeS94Z210S2pEQ3p2d3ZxakZuVUNPY3BoR3cyM3l6Y3RieEU3YVZxY1dDTVkvcWk2UFZZT0c3WXAzCnc0TUw2Z3FKWDRxT1BOTkYvd2tOS2xjenJJMEVhaFoybUN3MnVzNmVRaExtWlZtTENaSDdSWjNnWStaay9DdzIKT21yUWFIUDVaQXd3RmIvZ3NNVFRrdmhwQ0JxSCtBPT0KLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLQo=</prv>
+  </cert>
+  <cert>
+    <refid>65c110a71cc71</refid>
+    <descr>Web GUI TLS certificate</descr>
+    <crt>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUhORENDQlJ5Z0F3SUJBZ0lVU0JYWUw3QkRnYTUyanlybjFoNEFBdzNtMXdNd0RRWUpLb1pJaHZjTkFRRUwKQlFBd2dZa3hIVEFiQmdOVkJBTU1GRTlRVG5ObGJuTmxMbXh2WTJGc1pHOXRZV2x1TVFzd0NRWURWUVFHRXdKTwpUREVWTUJNR0ExVUVDQXdNV25WcFpDMUliMnhzWVc1a01SVXdFd1lEVlFRSERBeE5hV1JrWld4b1lYSnVhWE14CkxUQXJCZ05WQkFvTUpFOVFUbk5sYm5ObElITmxiR1l0YzJsbmJtVmtJSGRsWWlCalpYSjBhV1pwWTJGMFpUQWUKRncweU5EQXlNRFV4TmpRMU1qaGFGdzB5TlRBek1EZ3hOalExTWpoYU1JR0pNUjB3R3dZRFZRUUREQlJQVUU1egpaVzV6WlM1c2IyTmhiR1J2YldGcGJqRUxNQWtHQTFVRUJoTUNUa3d4RlRBVEJnTlZCQWdNREZwMWFXUXRTRzlzCmJHRnVaREVWTUJNR0ExVUVCd3dNVFdsa1pHVnNhR0Z5Ym1sek1TMHdLd1lEVlFRS0RDUlBVRTV6Wlc1elpTQnoKWld4bUxYTnBaMjVsWkNCM1pXSWdZMlZ5ZEdsbWFXTmhkR1V3Z2dJaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQwpEd0F3Z2dJS0FvSUNBUURwQnNzSzdWKzY3ZzNKa1hkbzBQQkhacEZmLzdOUWVvTitOTUw3bmVqZU42elNKTFZjClhNeUQrbzlMdVVCUHdReFBOc1JQS0xFeUZvR1NLaXlQKzc1MThYY092MHZVTURwbXh3aFJyYlVoaXV4TEZvaGsKUGQwMDFFQTgxSVpRVkZVWmxVV0lNY1EvTTQwRUFmQkN5T1VHTUxLY2xiT1F6eXkxaHpRblF1VVVlZE04T2w1UgpQQnN0cXVXM2J6WXdqRWZ0Ty9ZTTJvck1tVEZNV0ZjQTNDN3VmVHkyRklMNGdDaSt5NEpHTFd1cEhFK0pvUkJyCm9HUUR4UXBxcitoMVhoMGQrTG1xakYzcFVlSHZYRTNFNmppWlJ0dnRxb243VDV0SUc2V09jbXpEa0lzeTA0bDYKVGZsSCtwcUdGWWV5eW0ydEJ6NzNJNEVRMFFCUXRzVmxCMlRtU3lJSnEwanBtMVQ1cDBQZ0RSQlVJMWdzcGFQYwpndmt5VWI3VUlNU0hLdVNFREJKNE5mYTh4NHhHdmQ4cVdtRVQ5VWNHTi9iV0ZETGdGR1pLUmlhZm5qVnZpR1EyCjhGV3Bodmo5U0h2b0RjbWlGaVlrR0s3cHlpU3dPeSt6WmcraVhCamtCb2N0NENpUjJwaW95dExNMnppTUJZVmwKbi82YjNiNzFDR0c1Y2RYajlwYkQwLzVFMCtZSkF2b2VKY0tsRjBucWFzR0orNGd1ZzNpWnh5STVBNWlQR3NKSAp3UXBpRDMzQTBQaEZIZE15SW9Uc093SSs2b25abTZ2ei9kRmplRTc5bk9ua0VjTFRKcVJReFJwWmJLdVhaOWd2CklIb1hPS2dtL2Y5RlFHUnAzSi96eE8vYzdKMWRSU2RjN3R4ajZOU3RUNC9STWpCcHIxbDBTdUxQZVFJREFRQUIKbzRJQmtEQ0NBWXd3Q1FZRFZSMFRCQUl3QURBUkJnbGdoa2dCaHZoQ0FRRUVCQU1DQmtBd05BWUpZSVpJQVliNApRZ0VOQkNjV0pVOVFUbk5sYm5ObElFZGxibVZ5WVhSbFpDQlRaWEoyWlhJZ1EyVnlkR2xtYVdOaGRHVXdIUVlEClZSME9CQllFRk9YRzBERmp5SGpLbk02NHpsei9rRzY5UTZDVE1JSEpCZ05WSFNNRWdjRXdnYjZBRk9YRzBERmoKeUhqS25NNjR6bHova0c2OVE2Q1RvWUdQcElHTU1JR0pNUjB3R3dZRFZRUUREQlJQVUU1elpXNXpaUzVzYjJOaApiR1J2YldGcGJqRUxNQWtHQTFVRUJoTUNUa3d4RlRBVEJnTlZCQWdNREZwMWFXUXRTRzlzYkdGdVpERVZNQk1HCkExVUVCd3dNVFdsa1pHVnNhR0Z5Ym1sek1TMHdLd1lEVlFRS0RDUlBVRTV6Wlc1elpTQnpaV3htTFhOcFoyNWwKWkNCM1pXSWdZMlZ5ZEdsbWFXTmhkR1dDRkVnVjJDK3dRNEd1ZG84cTU5WWVBQU1ONXRjRE1CMEdBMVVkSlFRVwpNQlFHQ0NzR0FRVUZCd01CQmdnckJnRUZCUWdDQWpBTEJnTlZIUThFQkFNQ0JhQXdId1lEVlIwUkJCZ3dGb0lVClQxQk9jMlZ1YzJVdWJHOWpZV3hrYjIxaGFXNHdEUVlKS29aSWh2Y05BUUVMQlFBRGdnSUJBT2k5VU42K3JjS0wKSk5NdUI0K016ZzJQSW1zbXcyb3VxN0Y3Ym1wZ1pNa2N4bGVQTEZvWlBydWFDYm1XY05STDZYTkFuYVBoU0JDdgpHWTZVUk01YjdYaFdYYkJhcWtSL3Zabm42Rkt2eFUvVFY4c2tnY2FDeWV0c1JMYUpoM2dmeGwva3BFZmh4aGZ5CndqcWlhbncvRUk0OHl2V1UvSmVxZDA0V1VEcHdwd2pLZmwrZFdBcm5mank4dUxmUVZyc2g3OXV5OGZ6TDlzT3AKRk42Tk5WUktiQjRsd3dZMERGMWhqaU5TVzROVHUwVUl6SFliWFkxZDNKT1cwcEhXTEVLazkrRVdwNUl1ZnZBQwppOGh4M1RXNE4veWtGVExqMnN2TEJyMk53c2pVUEFnTk1tMUIyMHB0WENGY2R5KzhaSGdmMWMybkFiRDNZVVZCCnJVenJTMHdsMWtQbzdvbEgwVW45TVRPaGtJSmVsN0RWYTBJenBYVFFucUgrdU5wQ3JMZTNWdWVDeEI4eE5jeG4KRytUWG9ESkw3SVN3QWQ3YlhHOEREMnZVdGxJRkVMOFI1NDc1cU13MzgzMVU0Zys2b2FYUXdDd1ZTYlpNQkVnNgpweGJ6WGhxazg0T1ZrLzdZVWY4UHlNOWxLaC9QQVVoRTc0MnVJL1p1dk1ZUUlONUZkZkF0NzlDbEh4Z1NkVVJNCnR4cW5lQlBEZ1FxNkdPdnNBOXAxK215RG1PaE1XeVR6dlR1Wkh0N2g0bEFydVZHM0NTUndXVE9jYmRCWEJBcnUKWnB0dEw2OUIwVEl3SjJlYlpESEtTSFV5T1VFOU10Q3l5SHNjS1RMMGpPeVoyTThQTGFGeHpNdE9BMFpDVjEyQgowbUJHYUFxeStIT0J5V0doSllhUUN0NEcrM1Z1ejlHeAotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==</crt>
+    <prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUpRZ0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQ1N3d2dna29BZ0VBQW9JQ0FRRHBCc3NLN1YrNjdnM0oKa1hkbzBQQkhacEZmLzdOUWVvTitOTUw3bmVqZU42elNKTFZjWE15RCtvOUx1VUJQd1F4UE5zUlBLTEV5Rm9HUwpLaXlQKzc1MThYY092MHZVTURwbXh3aFJyYlVoaXV4TEZvaGtQZDAwMUVBODFJWlFWRlVabFVXSU1jUS9NNDBFCkFmQkN5T1VHTUxLY2xiT1F6eXkxaHpRblF1VVVlZE04T2w1UlBCc3RxdVczYnpZd2pFZnRPL1lNMm9yTW1URk0KV0ZjQTNDN3VmVHkyRklMNGdDaSt5NEpHTFd1cEhFK0pvUkJyb0dRRHhRcHFyK2gxWGgwZCtMbXFqRjNwVWVIdgpYRTNFNmppWlJ0dnRxb243VDV0SUc2V09jbXpEa0lzeTA0bDZUZmxIK3BxR0ZZZXl5bTJ0Qno3M0k0RVEwUUJRCnRzVmxCMlRtU3lJSnEwanBtMVQ1cDBQZ0RSQlVJMWdzcGFQY2d2a3lVYjdVSU1TSEt1U0VEQko0TmZhOHg0eEcKdmQ4cVdtRVQ5VWNHTi9iV0ZETGdGR1pLUmlhZm5qVnZpR1EyOEZXcGh2ajlTSHZvRGNtaUZpWWtHSzdweWlTdwpPeSt6WmcraVhCamtCb2N0NENpUjJwaW95dExNMnppTUJZVmxuLzZiM2I3MUNHRzVjZFhqOXBiRDAvNUUwK1lKCkF2b2VKY0tsRjBucWFzR0orNGd1ZzNpWnh5STVBNWlQR3NKSHdRcGlEMzNBMFBoRkhkTXlJb1RzT3dJKzZvbloKbTZ2ei9kRmplRTc5bk9ua0VjTFRKcVJReFJwWmJLdVhaOWd2SUhvWE9LZ20vZjlGUUdScDNKL3p4Ty9jN0oxZApSU2RjN3R4ajZOU3RUNC9STWpCcHIxbDBTdUxQZVFJREFRQUJBb0lDQUV6N3ZJcHduMGF2TElqaDhOUUU2c3g3CjJ4MGU2WXQxM2drTXZ6bkhFazZQa0IyZ21QWFpob3MzZEsyc2xzMkNWbUc1RXlPZnF1S0VRdXdaMkx6OGl4Q0YKNURKUUNtb2dRTHNCbUFMNzR6SWdwaTJzVlFUZzF6cUR3SEVZT1FOQ3lSWjVsUTRJZXUveVJPMEZBdTNkVnFRego1RjRNcXRUMVRLenY3TS9ucnF5VURyQUFESGJENTZxdm9kSjNBQzBMdXh0cHlzQzJWbEovYmFUdUxsZ1BaY1hPClJBZFhRV2w5VlhpcTNPLzRRM0FMOVU3ZmtnQXNiYjQ5RTFMcHFGOVY1MEtta0JnQzVXZVdjSkRXS3E4YVBmYU4KVFV6NElUdVFNaG1oWUpGdHhmYlp3dExZeGJ0TkZVU3RTdTF2SVhSMG9jVWU5ck5JM0hQRXlGamgrTmFHbWRORgpycUMwaFU3VmhrQlJsbmpwNEE1cGliZVY1QmllVUgvVHNVRndkSUxSY3NnMEVoSHVENmRZN05YNWE5ZEZCVmVGCkNSRW9jTEpnS2c0eGtvTlJYM2ZoMUpZaEVoNDZmakN1M0djbnJYYUZkY2twV1NLT0xSeGhPd05BUjBXMDJiUmQKbzhwQWZiSEU0eDFUa2dBa2RhcG5NZm01R2R6RkZtaTM3aE0wZWNoWGpCMTBGa09IOGd5eGR3NmxRSE5KWU9MOApNRjd2cVJIQlVhMmxQTDEzVGNESTJjYmdSOW5paUNPTndpTjJaS0ozSDk4alRkTUpLVEpBY0FkdlkvR0FmVkRQCk9haGxFUFhpaVFkSENwOERzMEtIdUg2VDlRdEdkTkJlcUNUMjdFY0lHRG12czlodEh2K2pkQmp2VGRpWTJNNm4KUnBWalV5dFczc29lTlJrQ3kzUWRBb0lCQVFEMSt3UzFycllqZG9lYWxsUC96b2VkZzBwZ2o3UWFkTGFGcndSeAoxSHp2Ylo1Skg4Wm1FdWl3K2syOGlWSVBwRmJPMWQyRjZRaDR1Z0NPQUY2b21QOWhNR0xMTVdLOWI3TEQ4cSttCml0QW9xMEFSUVJaaXJYaTZreXdpMFJyUlAzdXNDOSs4VVc5cXVVMmZPWVdNMUhPZHhRZTdoTm1PT1VyRGNHdlAKMTB5MXdTbnBZaVhsRk5ybm5FOE5IdklXVkpEUHRNelNZcllZaENwNkF5VGRZaGtXV0FMTHBSMk00T0RJZUdSVQpqYVZXWnZRbldJK1VGdGlZVkVDV21qbFhUUEsxemdkMmd0SElHQ3VPWjA3UThEYUlId1J4eFVab1F6emN2NUJqCm9qdUprZFNjRFo3SHhRZEVIWTludHJvWU9HWklCUmpkdlh3bFgrM29qbzNyK2RYSEFvSUJBUUR5aExJaGh6SWYKVG9DMmpnck0zVDZwL05YaUM1UllGN214Y2ZMSHU2Z2VKVlFMaXpNZDkrT01DZkNET1RMN3IrRStnalR3YWtHMQpTbUNRWVlqMU4rbEZjZFNYVytuZGFBTm1wN0FjK1cxR3l1WUlJWWk4UGFSOXF4TGFtMThJWXg2ODZkZUNZdFpmCkpkeHI1NjhSQ28xeHdYOGZBTjR2N25kbGYyUVRTNlJObzlmNXZ5YVJjdEx2NWJIU1pTQ2Q0ZmtlZ0g1Qlo4TDgKWEcrQmRKTEtxYXVHV29kTGhjNENEVkRTL0FlU2NYN2FLT2JXTUQ5N2lPYkUwOGVpK1RJYVFJNUVFNlJVNXVhTApqL3RwNmRCVExiRk02eStIUnJnQ3lXbWwwRnFNWllFaHFSNTdUbjhlTmM5ZjFSdjRHd1VvZUNFOXFoUU1zbDFCClljL0dGNmlGWVRDL0FvSUJBR1c2eXRmWXlic2c2alFrdDlpenNhS1RDYytsbnZiU0RpcDdsM3I4Umk4L1JwYzMKYlBZS0cvSVZrdERHZWdtK0RhaTlDa0MzZjZsdVE0eDIycThmbDM2NlpDRms2MUV0UU9HSkhOdmp6UE1FNEJwQwpzTjllbnUrS3JsWTM1TDlsWWVCbGlNSjVhM3JYNkNKUng4bldrM3BNWWtaTFN5NW13MlRRdWNYYlpQNUdSTzhnCmlFdVZ0SExWVWx3NjBDUXNGVGZScm1QVUx6czBiZHpJTUJiZTIwRkNaT1dVQkFTZmZGZHNjeElGQXJ3WkdDQ3QKbjdPL1B4VEF3M1dGa3ZGb0FYanZIR2NHODN1dGcxWUJvN2NGb1lmcVRBeEJhanowa2RjNTRwMVNHdzFxSW1Qbgp2aU1nZVVEU2VOeUwxYXJ1cUY1Z3ZVZjNkY0IvVEFWQjc3QUlRMEVDZ2dFQVJYVS8xMTV6T29ndlVSbXBlamM3CmhWQUdxZkVMRVpmcDlTcGZrRmpzczRXWlpwejlqTzI4WEJWVXJ5Q291M0VLSCs4RzNueHdTVTMrRGh3Qkw4cE4Kb3pnUTNURFQ4RGVrRWJpaE5nc3lBdjZGbDNxVFFPYWV2K2RKUlJjT3hzWXN2WXB6ME1JaUI2bytVU0ZRQUo5MwpGMGVGOHdrNm1adkEwbThENklyWGllME5KRmhjNFhkemRvWGd3aE40bmY5a2JCbjlEeHA2dS9CMWR5dytCcEZGCnNQc29tTGEvNDlLUWZYejFaam5mVFBnOTlNWm95Q2JUZ1RmdWkzeTNudEV5YmNqNlhkNnIxUGp0MXMzQ2ZyQXQKZ1l3eVZwb29oWlBPRUZGMlBaT3N3a2svazYxTnR3ZE9WM0lmeXBWaWlzNnRKbzRaby9GSnlEb05XZnpZcFNySwozUUtDQVFFQXRlcVJWNDltMWNZM0RwakV6eDh2eU1hdFRUay9xUDZPa3B2OXVNNmNUZWp0V0JuTmVidWpXaGVzClhBOGxWclR1VzJJdk5TY3J2bEltYmF0R0RyTloxbmRQald2RG54QnprWXV1YStkR3dLMU5WL093aURDVFFKZUsKV05GWEd2N2dSeGtoUDNDVVh1TTJ0OHByYnlIZXNsY3V3b1FRRE5ZR01JdE40REMxdlJSM3pRblp5c3BhTGFoawprOTY1bWhjNGpHWE5PbnZQVkRqNkVZMEJOWmZVMkdhL3M0SldkdENzRkdjZGRySmlRNXZsWlBkekh0OEc3WWFVCjIzWllIRDM2bEdpdDUzaUxyUnlMbmd0dzNpRFdlVkI4eUF2alZmRGVGVXJ5TVhpelhScjZCRjg0THZHbksyL2IKUkRXL1V4cy9ZdnFaRngzQWc4bldZaU9vMXJ4S3Z3PT0KLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLQo=</prv>
+  </cert>
+  <cert>
+    <refid>65c110f56dc4a</refid>
+    <descr>Web GUI TLS certificate</descr>
+    <crt>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUhORENDQlJ5Z0F3SUJBZ0lVT1lqd1I2clhNNDMxZWJ2SURxSGhrc3VNUkV3d0RRWUpLb1pJaHZjTkFRRUwKQlFBd2dZa3hIVEFiQmdOVkJBTU1GRTlRVG5ObGJuTmxMbXh2WTJGc1pHOXRZV2x1TVFzd0NRWURWUVFHRXdKTwpUREVWTUJNR0ExVUVDQXdNV25WcFpDMUliMnhzWVc1a01SVXdFd1lEVlFRSERBeE5hV1JrWld4b1lYSnVhWE14CkxUQXJCZ05WQkFvTUpFOVFUbk5sYm5ObElITmxiR1l0YzJsbmJtVmtJSGRsWWlCalpYSjBhV1pwWTJGMFpUQWUKRncweU5EQXlNRFV4TmpRMk5EZGFGdzB5TlRBek1EZ3hOalEyTkRkYU1JR0pNUjB3R3dZRFZRUUREQlJQVUU1egpaVzV6WlM1c2IyTmhiR1J2YldGcGJqRUxNQWtHQTFVRUJoTUNUa3d4RlRBVEJnTlZCQWdNREZwMWFXUXRTRzlzCmJHRnVaREVWTUJNR0ExVUVCd3dNVFdsa1pHVnNhR0Z5Ym1sek1TMHdLd1lEVlFRS0RDUlBVRTV6Wlc1elpTQnoKWld4bUxYTnBaMjVsWkNCM1pXSWdZMlZ5ZEdsbWFXTmhkR1V3Z2dJaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQwpEd0F3Z2dJS0FvSUNBUURZWWpiVzhMTjVlM2dpQkkvQkNLMDhiN3U3R2NIMEYxcFRLbGtDWFY4bVdkcW9xM1VhCnptYlFUZExjZEh4Unp2Z0hDM2RoNjBEeUxPbEhJOUNmUUVFMXg4Q3lMODhjZHV5eXczK05pL0lUcng0MzRCUVQKeG1oK3BDNXcyMnFacVRFRnZSRkdpNGowOXE0cHhnd0QzVE1rQnlnN0d6bHZmdGUzLy9ZOGNyd3V1WmJnLzZSQQpLUm5tRERMbURoWkNpNEhyOXBES0hlL0lTMnNkbStWcVQ2UUNvbE90R0ZqM2JKTzJBdHFHL3Z5YjJlWkRWSHJUClBrT1E4Yk12cU1qL20wR1MrR1JucTc3VmhHU0VWRDlJRVkzWklzZWswSk4yZGFoZlpWTG0yWE11ZDhqaWM2T1AKTDBmSmdKbHBvbHJJZlJlYXdCZHI3eFBIaDRFbWVobVF1dGUreU9jZ3EreW1VaTFxcjJxYnRlZUZ5RGNaZU9qNgpNVmYvUlZxN2NOeFlPcU5LQ0tuZG42T0l4bEp1Rk14Y0ZpaElPMittUHBUaHZlamdManZoYUFlb09FaE1hTHVuClJqdTBPNnduNzBmUGFhY284c3R5enpJMkI2RUtwOTJ6K2lqdUQ0MU9kKzk5bkJVWlh6aXM0aGwrdUlPZVQ4U2MKU2RzT3BHVjNtR1kxL3ZPdGd1NXpZVkN3akZadTRaVWc1ZVA1K2FmK21LUEtjQlRTUVdGSVpLaEo2eXovdnRsSwpDdUQ3cGdlZG1XL3pzcDYyN0ZDSk9GUHJERFQ3SklOSU1IcS9oT0FFbUtLUFRqLy92ZDRFRTJrci9Tb0tPNlJaCnYxOGhzL281NFBBMGh0VXYyZC9QS21ZdXZUOXBWSlhmbm9UWkFzWGtOWS9SSWdSNUxIQS9Dc0l5R1FJREFRQUIKbzRJQmtEQ0NBWXd3Q1FZRFZSMFRCQUl3QURBUkJnbGdoa2dCaHZoQ0FRRUVCQU1DQmtBd05BWUpZSVpJQVliNApRZ0VOQkNjV0pVOVFUbk5sYm5ObElFZGxibVZ5WVhSbFpDQlRaWEoyWlhJZ1EyVnlkR2xtYVdOaGRHVXdIUVlEClZSME9CQllFRk44Y1FYelB0aGF1RHBSQ2JldXNUbUJTMUx4eU1JSEpCZ05WSFNNRWdjRXdnYjZBRk44Y1FYelAKdGhhdURwUkNiZXVzVG1CUzFMeHlvWUdQcElHTU1JR0pNUjB3R3dZRFZRUUREQlJQVUU1elpXNXpaUzVzYjJOaApiR1J2YldGcGJqRUxNQWtHQTFVRUJoTUNUa3d4RlRBVEJnTlZCQWdNREZwMWFXUXRTRzlzYkdGdVpERVZNQk1HCkExVUVCd3dNVFdsa1pHVnNhR0Z5Ym1sek1TMHdLd1lEVlFRS0RDUlBVRTV6Wlc1elpTQnpaV3htTFhOcFoyNWwKWkNCM1pXSWdZMlZ5ZEdsbWFXTmhkR1dDRkRtSThFZXExek9OOVhtN3lBNmg0WkxMakVSTU1CMEdBMVVkSlFRVwpNQlFHQ0NzR0FRVUZCd01CQmdnckJnRUZCUWdDQWpBTEJnTlZIUThFQkFNQ0JhQXdId1lEVlIwUkJCZ3dGb0lVClQxQk9jMlZ1YzJVdWJHOWpZV3hrYjIxaGFXNHdEUVlKS29aSWh2Y05BUUVMQlFBRGdnSUJBREpsNmRsMis5Vi8KNFJZZys2N0NuMnlwekZJY3NWYVRRTnBUUG9OcGlyNXE2SFJYZkltd2E0eFhtQnlGNVN3bkpaSi9lSXFBWXNQNgpLT1hrekpkdm5JSFJkalY1YkdlVUxBa2c2YnZkSWFrczdoQ3pLdFpRR1pON0Q1Nk83aUNGTE1qdW1DeTgwRE52CmpqUWVnMEFsemJNV2M5Rkd0U004Y2VsYngvZUZSczZMaHZlUEJ4c3h6eCtpYVJEZUE5akVIRFdTV2ZjMUUxU1MKMnRMZHp5aFRCVC9qZlA5NDY5VjBySUFhaTNTQW9PalhwWlVpMzVUVnhlZ2tpT2EyWVVqUUlxSHF4Z2JETnVzRQpIVWN3N3FDd2RESUk2WGlHcHl4aDQramlIaEE4UXQ5OG9LcGEzQ2Q0SzFSaVdPNHhvbU1NRWh6SEhoRnk2eVo1CnExb3pBREJ6YnRGVDJ4N3N1TmxuUElmL3o1T2RlYko4SmVsK3N4aVpKWnVUV0JXOTFkWnBublNwdjVYc3J6b0wKWEZhV0JEanQ1Sm5BK1BkS09VZ0N4TWQwbGtZbWQ3SndYZEVIWU9WRUt2cFQ3SnFPM2RYbFM2U3hodzZqa2V0SgozekZlYmxmTTVhS1VtV1ZVaThzdzZqTFN4WmpqcURVRldtOUVoaEQ1SVYzSzZOSlAwRkVZcHpPWWpma0dFTG5aCjRUdDB4UkluOTlhRHlsV1BhcDIrT0k4Q3NuOWI3L0VSZmlaTUVqajNkeXFIdHk3MHZtR09XNnlhakZjbnJsR0IKZ2JpZ1BoQmd4MERQaGxQSGZIN1hCSnRvRFZod1R2Y096V25URXMraTRBVXJhWU9MQ2l0cVlQeTA4ZHEwNzNNbgpWL3pQUTl0S2hzNkk4Ync5TXlidGFHbFRVZmxmV3NuSAotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==</crt>
+    <prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUpRd0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQ1Mwd2dna3BBZ0VBQW9JQ0FRRFlZamJXOExONWUzZ2kKQkkvQkNLMDhiN3U3R2NIMEYxcFRLbGtDWFY4bVdkcW9xM1Vhem1iUVRkTGNkSHhSenZnSEMzZGg2MER5TE9sSApJOUNmUUVFMXg4Q3lMODhjZHV5eXczK05pL0lUcng0MzRCUVR4bWgrcEM1dzIycVpxVEVGdlJGR2k0ajA5cTRwCnhnd0QzVE1rQnlnN0d6bHZmdGUzLy9ZOGNyd3V1WmJnLzZSQUtSbm1ERExtRGhaQ2k0SHI5cERLSGUvSVMyc2QKbStWcVQ2UUNvbE90R0ZqM2JKTzJBdHFHL3Z5YjJlWkRWSHJUUGtPUThiTXZxTWovbTBHUytHUm5xNzdWaEdTRQpWRDlJRVkzWklzZWswSk4yZGFoZlpWTG0yWE11ZDhqaWM2T1BMMGZKZ0pscG9scklmUmVhd0Jkcjd4UEhoNEVtCmVobVF1dGUreU9jZ3EreW1VaTFxcjJxYnRlZUZ5RGNaZU9qNk1WZi9SVnE3Y054WU9xTktDS25kbjZPSXhsSnUKRk14Y0ZpaElPMittUHBUaHZlamdManZoYUFlb09FaE1hTHVuUmp1ME82d243MGZQYWFjbzhzdHl6ekkyQjZFSwpwOTJ6K2lqdUQ0MU9kKzk5bkJVWlh6aXM0aGwrdUlPZVQ4U2NTZHNPcEdWM21HWTEvdk90Z3U1ellWQ3dqRlp1CjRaVWc1ZVA1K2FmK21LUEtjQlRTUVdGSVpLaEo2eXovdnRsS0N1RDdwZ2VkbVcvenNwNjI3RkNKT0ZQckREVDcKSklOSU1IcS9oT0FFbUtLUFRqLy92ZDRFRTJrci9Tb0tPNlJadjE4aHMvbzU0UEEwaHRVdjJkL1BLbVl1dlQ5cApWSlhmbm9UWkFzWGtOWS9SSWdSNUxIQS9Dc0l5R1FJREFRQUJBb0lDQUg0VjNMYXFVeW82aytuZWxwVjRwTmxPCmtpbVgvTGhxMHlzYXhmcm14WWJuWE01aitqekFnSkJvaUxJRS9sdjlLZkdROE9PUjNhcEFHVDVtMUMyM2wwZnIKT1pHYTRpaEg4K3pHbGhDNHR6cFpGRmFpcjVCR1VLVmFyZVQ5TmNTTUhoQ2w5dWNRYjZHdURCWXpYTlR6azlVdQpobmJLaWxFNXJDRi9lTkFJV3pjdTFZZ043bnVrZDM3aEpOZUE1ZCtvd3Uvb0lMNWxhMDlmQXUraDQ3QnE3N3JKCk05RHRHd294cm5Da2dRbWdrem1OWXV0ZzBxRTg2c29Pek1hOHAwS3FDUy9HcFZyemJLT21IWnd1S3lHbmVPeEoKbytPWjFoTjB3OE95bXZnQlJXaVNTL0FJU2dvcEZyK0h1OTBkeWFDQm83dDhxeWt0aW16OXZIZmJOZ0pyblVKdgpldEJLckJlb041Y3pibkJDbGsxRUUvSDVVTjVlNU93L3A1QmhlMVZxWkEwUHlpcDc1MEI4QUdZaW9Vb2JBSEdZClNoYnhMc0o1MHFtRktYUDhiUTZ5Y1dDNGhDU0pPRFFRelZOODYzNzQxNUd4L0tTN2xDeTdIMkhSQUg0cDhNbk4KMERzcEw3bFF2N0lzRlJrWVJrRDE4cDRkTDM4QUllZnFTeWZMTWdSQWl5d0s0VHdIbDAxaENXRWhjRDY5VURIKwpsN25TbjN5NnpmeDlySnNFekhPR0FneVhhUXRtK2k3dUdGbkFVWkJaQ2pLakFqa1JBSm1obm93c1NyZkRjaUJJClRTbnNsQm5GVzcvUFprVVUwMGtscDRvekM3akZMM25ha2VrMUpuazdRMjkzeklLb2ZIbTZPM2R3MmNIeGFLM0sKVStlZlFLa21MeTlkc0NDejZ1RHhBb0lCQVFEOHRib3kyWjRFeDgwT1hPeklLSXMxaUNPZmJHSHUxYzMybnlveApXTG1wUFE5MkZRYTJuME9BL01XbmhTNG85Tm5ScmMyRGZrWUpiQVpYTjdueUVFR0ZoK05seE01a0xPSys4L0x1CjdMSHhQSlJ2YlN0SHJaODlleE9yZWorZXY0N3N3andReTIwNHpnY29VdlpGY1NWRXFNZ3hYY0Q2aEtYT0tJMy8KSHJ3L3d1TThNbk5LVjlaTUg3czRaRGFKUmVaTWhsNmJQUzFKemZqOHRrb3g0aGlkRmFidVV2VTRYYXBQSno1UApjRGgvQUNXWkQ4Q3FyQTNYV1VXQTN5Vng0WHZUdURvMnlmcU95c01qQ3FmNFNJVTBmWURUakJiYkJFUVExOXdhCktRV0cyVEFBVWxDQTZDWTNWNVFtN0w1dFRWSWVLUWxlOWFsOUErVXJPRUNuVkhsSEFvSUJBUURiTTJtMUl2K1YKNGROS3VkWDJ5czRaSnF5Y01pK2hZanczbnFKU2NuNEEyN1VycFJuTWpmMENuUnJUTFlOR25HRkx1aE5UYVVlKwppUndTeXdmM3ZocWcxc0NoSEpHRkhQZkZsN1Ntc2NFUWk4SjliVEpzdVZUYlk2K2FRZ3lLZ1ZoK3grYTJWUW1uCmRleDErR3dPeit0dU15TUdUN2JmQ0E1L0xVUDVzVmYvTEtGRFN5VUNENk4zVTROWlJpYktyQlFxeGdYc2NmWDQKcFpBZXQ4Q0t1dC9uNnFmOUZHNHdXcExLelI3TGtudlNMencxRGM3akJjZEIxZG9XazVCWk9mZCt3c3Fjb3hqRwpFaXpscHNwZnhVNnc5eFVseE9WR21qVmpWL2hzVlkzQVlCdHlnUUpzUU5xbTJsVnVWR2M4NC9wSWlpM0JTRmNxCi9qd2dpcXlhYmFtZkFvSUJBUUNyMVpvMXgzbkdnR0d6bVlZOEdDMklpZmpIQjdpVDRYZjZjWUlNS2V1YzQzTW0KOU9jcXVLTDdDMllQSWVVZ1hsWGFXTmM4eVZrd1FPOFMwVWEwRFUrd1Q1VlZkdnhzYTRVSEdQUWdlSHdLc0FteQp0c1hPS0lYMkZVRnJ3V1dQT1d3akczUWlhMkRxVmxYUm1vL3c2aDNRVVFCSGFSdTJmUW9OWTlBaUlMRWFuaGRMCnNIWnFuODJNMTZyRGpvankwTC9uV3hycmJpN2tWNVV0cVhwTDd4U1RnOHlOazRWQS9aZTMyTlJxeWNEd3dwWE8KUFVMaUNyb2lxNFl5T2duSkpPekJLeTBTWWtib1g0Rk95NGtwcjQ0OEFmYmVZZ3lNZ3BzUjVPVzZPQmlVK0F2Rwp2RElYWlVQUEw5TUNvTXBmb2tyclRUWWRCdWhucElWbzNRaEJmNVF6QW9JQkFId1V6RisyNGdzTC9Ea3VuUW5JCm40WHBPSWhxZUQvWWhkSE9RSUIvUXdobFZsYlFiSnc0TytLQTREQnVjUU5GZm1ZSmZPc1lpMzQxeXVod2VhQXAKd3BVTk81bDN2SUFuZDdJb1FDQ2tPbStOVFprR2VTYkdlbHgrUDJjSXdHU2U5Mk04OFVLQlBLZkl2d1BBamhxTQpZKzdMajZZQTlibW1xOTRkMTM2K2Z0dDVmZ2ZEdjcwODhRR1pDcDg4Y0xVRlY1MG0zeStMQ3Z1bmJMK1dzSzFYClAydmVqeDFadFU0MTF5WnBtbWNPRW4xV003U3NqbEpBY1J5NVcyeXdOMlBxeGtqQkowUW5wdHhvYVhYT1JueVUKQ2dsdXRFL2U5eEpTTktwNW42eGplWXhPV3Zza1FDVGJTV3B0NlRJOUlQdDg2YTZxV1dBeC9QWGZXRlhyYWUwNAo2bTBDZ2dFQkFLbjVycE8vRG9aeGU5NmpOUTBRa1M5U1lqSm9EZ0o3S240TVdMM1RwSTc5dDJTbjQzL1YwTXlJClZFSG9LOWFCSGdwNUdtVG52Qzh0YmpuU21JamRGcHVLTE9pdFVNK2o5VTNUVmNueGZJRk5aVFVsUWZvMHM5b08KU1ZnN21hWWl0SHZwcGFDd3J2eUkrcmtpTC84RDVkZmJVTlYzODVSRkFjWG1uNU1wd0tJek9od0k0WnJQR0JURQpUTHFicE1FSmNMd2pIS0g3SzRoaHpuYlErMUhMMzh0SzlvYjBkdlF3bHVRdVNtR1JGUHBJQnBvZVltNUlOODRjCjV0MXUvVTVOc051TWVNSGFrNGFCbkUvK2kzb01SUkFySXUzbzAxNUxxVFZWT3JYV3dhUDVwRnZrTmZoTTliZHIKdUtoeFRnc2FVSTgxeXVCTWZFSEIwTS9EaWhDVVhaTT0KLS0tLS1FTkQgUFJJVkFURSBLRVktLS0tLQo=</prv>
+  </cert>
+</opnsense>
